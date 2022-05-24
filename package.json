@@ -11,11 +11,11 @@
     }
   },
   "scripts": {
-    "dev": "yarn build -- --watch --onSuccess \"node dist/index.js\"",
+    "dev": "yarn build -- --watch --onSuccess \"yarn start\"",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",
     "start": "node dist/index.js",
     "lint": "eslint . --ext .js,.ts",
-    "lint-fix": "npm run lint -- --fix"
+    "lint-fix": "yarn lint -- --fix"
   },
   "devDependencies": {
     "@types/node": "^17.0.15",
