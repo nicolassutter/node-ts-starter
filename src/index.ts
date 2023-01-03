@@ -1,3 +1,3 @@
-import { num } from '~/test'
+import { setupProcess } from './process'
 
-console.log(num)
+setupProcess()
