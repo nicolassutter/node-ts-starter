@@ -11,23 +11,22 @@
     }
   },
   "scripts": {
-    "dev": "nodemon --watch src -e js,ts,json --exec \"ts-node src/index.ts\"",
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "cross-env NODE_ENV='development' tsup --watch --onSuccess \"pnpm start\"",
+    "build": "cross-env NODE_ENV='production' tsup",
     "start": "node dist/index.js",
-    "lint": "eslint . --ext .js,.ts",
-    "lint-fix": "npm run lint -- --fix"
+    "lint": "eslint . --ext .js,.ts,.tsx"
   },
   "devDependencies": {
-    "@types/node": "^17.0.15",
-    "@typescript-eslint/eslint-plugin": "^5.10.2",
-    "@typescript-eslint/parser": "^5.10.2",
-    "eslint": "^8.8.0",
-    "nodemon": "^2.0.15",
-    "ts-node": "^10.4.0",
-    "ts-node-dev": "^1.1.8",
-    "tsconfig-paths": "^3.12.0",
-    "tsup": "^5.11.13",
-    "typescript": "^4.5.5"
-  },
-  "dependencies": {}
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.31.0",
+    "eslint-config-alsacreations": "^0.3.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4"
+  }
 }
